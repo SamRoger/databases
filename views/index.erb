@@ -1,4 +1,4 @@
-<h2>Create New Blog</h2>
+<h2 class="create">Create New Blog</h2>
 <div>
 	<form action="/new_blog" method="post">
 		<input placeholder="title" type="text" name="title">
@@ -19,7 +19,7 @@
 </div>
 	<% end %>
 
-<h2>Category Search</h2>
+<h2 class="category">Category Search</h2>
 	<div>
 		<form action="/user_search" method="get">
 			<input type="text" name="search" placeholder="Search Category">
@@ -30,6 +30,7 @@
 			<h5>Title: <%= result.title %></h5>
 			<h5>Category: <%= result.category %></h5>
 			<h5>Content: <%= result.content %></h5>
+			<hr>
 			<% end %>
 		<% end %>
 	</div>
