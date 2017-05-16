@@ -1,0 +1,6 @@
+Create a few more blogs, either from the terminal or from the client. From the client, a user should be able to search a category and only those blogs with the searched category should come back when they click the search button.
+
+Create a users table in the database. Make sure you give the table appropriate fields for what a user might need. Set up a sign up form that creates users from the client. 
+Create a comments table in the database. Make sure you give the table appropriate fields for what a user might need.
+
+Step 2: Instead of a search field, create a dropdown for the categories that has all categories listed. 

@@ -1,0 +1,43 @@
+<h2>Create New Blog</h2>
+<div>
+	<form action="/new_blog" method="post">
+		<input placeholder="title" type="text" name="title">
+		<input placeholder="category" type="text" name="category">
+		<input placeholder="content" type="text" name="content">
+		<input type="submit">
+	</form>
+
+<h3>Blog Results</h3>
+	<% @blogs.each do |blog|  %>
+		<div>
+			<hr>
+			<h5>Title: <%= blog.title %></h5>
+			<h5>Category: <%= blog.category %></h5>
+			<h5>Content: <%= blog.content  %></h5>
+			<hr>
+		</div>
+</div>
+	<% end %>
+
+<h2>Category Search</h2>
+	<div>
+		<form action="/user_search" method="get">
+			<input type="text" name="search" placeholder="Search Category">
+			<input type="submit">
+		</form>
+		<% if @results %>
+			<% @results.each do |result| %>
+			<h5>Title: <%= result.title %></h5>
+			<h5>Category: <%= result.category %></h5>
+			<h5>Content: <%= result.content %></h5>
+			<% end %>
+		<% end %>
+	</div>
+
+
+
+
+
+
+
+
