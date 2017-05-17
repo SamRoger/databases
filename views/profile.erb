@@ -21,10 +21,15 @@
 
 <h2 class="category">Category Search</h2>
 	<div>
-		<form action="/user_search" method="get">
+		<!-- <form action="/user_search" method="get">
 			<input type="text" name="search" placeholder="Search Category">
 			<input type="submit">
-		</form>
+		</form> -->
+		<select action="/user_search" method="get" name="search">
+	      <option value="programming">Programming</option>
+	      <option value="travel">Travel</option>
+	      <option value="food">Food</option>
+	    </select>
 		<% if @results %>
 			<% @results.each do |result| %>
 			<h5>Title: <%= result.title %></h5>

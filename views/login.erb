@@ -1,0 +1,16 @@
+<div>
+	<h3>Log In</h3>
+	<form action="/login" method="post">
+		<label>Email: </label>
+		<input type="text" name="email">
+		<br><br>
+		<label>Password: </label>
+		<input type="text" name="password">
+		<br>
+		<br>
+		<input type="submit">
+	</form>
+	<% if flash[:notice] %>
+	<%= flash[:notice]  %>
+	<% end %>
+</div>
