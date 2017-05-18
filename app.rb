@@ -13,6 +13,11 @@ get '/blog/:id' do
 	erb :blog
 end
 #---------------------------------------------#
+get '/blog/' do
+	
+	erb :blog	
+end
+#---------------------------------------------#
 get '/' do
 	erb :signup
 end
@@ -48,7 +53,6 @@ end
 post '/new_user' do 
 	User.create(username: params[:username], email: params[:email], password: params[:password])
 
-
 	redirect '/login'
 end
 #---------------------------------------------#
@@ -64,14 +68,20 @@ post '/login' do
 		redirect '/login'
 	end
 end
+#---------------------------------------------#
+post '/comments' do
+	blog_id = params[:blog_id]
+	# @current_user = User.find(session[:user_id])
+	Comment.create(title: params[:comment_title], body: params[:comment_body], user_id:session[:user_id], blog_id:params[:blog_id])
 
-post '/create_comment' do
-	user = User.find(session[:user_id])
-	blog = Blog.find(session[:blog_id])
-	Comment.create(title: params[:comment_title], body: params[:comment_body], user_id:session[:user_id], blog_id:sessions[:blog_id])
+	redirect "/blog/#{blog_id}"
 end
+#---------------------------------------------#
+post '/logout' do
+	session[:user_id] = nil
 
-
+	redirect '/login'
+end
 
 
 
