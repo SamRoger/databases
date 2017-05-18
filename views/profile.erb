@@ -11,7 +11,7 @@
 	<% @blogs.each do |blog|  %>
 		<div>
 			<hr>
-			<h5>Title: <%= blog.title %></h5>
+			<a href="/blog/<%= blog.id %>"><h5>Title: <%= blog.title %></h5></a>
 			<h5>Category: <%= blog.category %></h5>
 			<h5>Content: <%= blog.content  %></h5>
 			<hr>
